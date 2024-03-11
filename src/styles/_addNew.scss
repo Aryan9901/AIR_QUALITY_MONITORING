@@ -1,0 +1,93 @@
+.addNew {
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	> h2 {
+		font-size: 2.2rem;
+		margin: 1rem 2rem;
+	}
+
+	//**  widgetcontainer
+	> .widget-container {
+		@include flex(row, center, stretch, 1rem);
+		flex-wrap: wrap;
+		padding: 2rem;
+
+		> .widget {
+			border-radius: 3px;
+			min-width: 220px;
+			max-width: 400px;
+			width: 31%;
+			height: 14rem;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
+			padding: 1rem;
+			@include flex(column, space-between, unset, 0);
+
+			> div {
+				@include flex(row, flex-start, center, 1rem);
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				padding: 0.5rem 0.2rem;
+
+				> svg {
+					color: #029e9d;
+					margin-left: auto;
+				}
+				> a {
+					@include flex(row, flex-start, center, 1rem);
+					transition: all 0.3s;
+					&:hover {
+						color: #029e9d;
+					}
+				}
+			}
+
+			> h2 {
+				font-size: 2rem;
+				text-align: center;
+				color: #029e9d;
+			}
+
+			> .add-new {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				font-size: 1.2rem;
+
+				> img,
+				svg {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+	> .barChartContainer {
+		padding: 2rem 3rem;
+		> .addnewOwnerTable {
+			> .tableHeading {
+				@include flex(row, space-between, center, 1rem);
+				button {
+					@include flex(row, flex-start, center, 1rem);
+					padding-left: 1rem;
+					border-radius: 5px;
+					> svg {
+						color: #3f3f3fb6;
+						font-size: 1rem;
+					}
+					> input {
+						border-radius: 5px;
+						@include inputStyles;
+					}
+				}
+			}
+			> .Table {
+				border: 1.5px solid #029e9d;
+			}
+		}
+	}
+}
