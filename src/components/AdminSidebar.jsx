@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-mixed-spaces-and-tabs */
 import { useEffect, useState } from "react";
 import { AiFillFileText, AiTwotoneCar } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
@@ -7,7 +5,6 @@ import { RiDashboardFill } from "react-icons/ri";
 import { IoPersonAdd } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
 // eslint-disable-next-line no-unused-vars
-import userImg from "../assets/userImage.png";
 import { Link, useLocation } from "react-router-dom";
 
 const AdminSidebar = () => {
@@ -51,7 +48,10 @@ const AdminSidebar = () => {
 				}
 			>
 				{/* <h2>Logo.</h2> */}
-				<img src={userImg} alt="user image" />
+				<img
+					src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png"
+					alt="user image"
+				/>
 				<h2>Marvin McKinny</h2>
 				<h5>President of Sales</h5>
 				<DivOne location={location} />

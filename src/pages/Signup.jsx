@@ -1,5 +1,3 @@
-import travelsImg from "../assets/travels.png";
-import signupImg from "../assets/signup.png";
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -40,12 +38,12 @@ function SignUp() {
 	return (
 		<div className="signup">
 			<nav className="login-nav">
-				<img src={travelsImg} alt="travels image" />
+				<img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png" />
 				<button>Sign Up</button>
 			</nav>
 			<main className="login-main">
 				<section>
-					<img src={signupImg} alt="sign up image" />
+					<img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png" />
 					<form onSubmit={isLoginPage ? loginSubmitHandler : signupSubmitHandler}>
 						<h2>{isLoginPage ? "Log In" : "Sign Up"}</h2>
 						<p>Please Enter your details</p>
