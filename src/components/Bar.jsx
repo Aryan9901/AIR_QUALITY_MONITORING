@@ -2,20 +2,20 @@
 import { BsSearch } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
+import { MdGTranslate } from "react-icons/md";
+import { BiTargetLock } from "react-icons/bi";
 
 function Bar() {
 	return (
 		<div className="bar">
 			<div>
 				<BsSearch />
-				<input type="text" placeholder="Search Owners..." />
+				<input type="text" placeholder="Search Location City or Area" />
+				<BiTargetLock style={{ color: "blue", fontSize: "2.4rem" }} />
 			</div>
 			<article>
-				{/* <i>
-					<IoMdMail />
-				</i> */}
 				<i>
-					<IoIosSettings />
+					<MdGTranslate />
 				</i>
 				<i>
 					<FaBell />
@@ -24,10 +24,7 @@ function Bar() {
 					src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png"
 					alt="user iamge"
 				/>
-				<div>
-					<h5>Marvin</h5>
-					<p>sales</p>
-				</div>
+				<button>Login</button>
 			</article>
 		</div>
 	);

@@ -84,116 +84,55 @@
 		}
 	}
 
-	// ** graph-container
-	.dashboardTripTableContainer {
-		margin: 0 2rem;
-		margin-bottom: 2rem;
-		> .Table {
-			border: 1.5px solid #979595;
-			// min-height: 80vh;
-			> .tableContentBody {
-				min-height: unset;
-				> a {
-					padding: 1rem 0;
+	// ** map hero container
+	.mapContainer {
+		height: 85.36vh;
+		width: 100%;
+		background-color: #f7b898;
+		padding: 1rem 2rem;
+		@include flex(row, space-between, flex-start, 1rem);
+		> div {
+			width: clamp(400px, 48%, 100%);
+			@include flex(column, flex-start, center, 1rem);
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+			border-radius: 11px;
+		}
+
+		> .HomeCard {
+			padding: 2rem 1rem;
+			background-color: #fcfcfc8f;
+			> div {
+				@include flex(row, space-between, center, 0);
+				width: 100%;
+				> h3 {
+					@include flex(row, flex-start, center, 1rem);
 				}
-			}
-		}
-	}
-	.driver-container {
-		@include flex(row, unset, unset, 1rem);
-		margin: 0 2rem;
-		margin-bottom: 2rem;
-
-		.dashboardTableContainer {
-			// width: 33%;
-			margin: 0;
-			> .Table {
-				border: 1.5px solid #979595;
-			}
-		}
-
-		//  driver container
-
-		.dashboarddriverDetailsTableContainer {
-			width: 70%;
-			> .tableHeading {
-				color: #fcfcfc;
 				> button {
-					border: none;
-					outline: none;
-					display: flex;
-					align-items: center;
-					padding-left: 1rem;
-					border-radius: 5px;
-					> svg {
-						font-size: 1rem;
-					}
-					> input {
-						@include inputStyles;
-						border-radius: 5px;
-					}
+					padding: 0.5rem 1rem;
+					border-radius: 30px;
 				}
 			}
-			> .Table {
-				border: 1.5px solid #979595;
-				> .tableContentBody {
-					> a {
-						padding: 1rem 0.2rem;
-						> button {
-							padding: 0.7rem;
-						}
+			> .maindata {
+				width: 100%;
+				@include flex(row, space-between, center, 1rem);
+				> div {
+					@include flex(row, space-evenly, center, 1rem);
+					flex-wrap: wrap;
+				}
+				> .graph {
+					width: 40%;
+					> .piechart {
+						@include square(8rem);
+						border-radius: 50%;
+						background-color: red;
+					}
+					> .g1,
+					> .g2 {
+						width: 40%;
 					}
 				}
-				> .driverFooter {
-					width: 100%;
-					border-top: 1.5px solid #979595;
-					> .tripDetails {
-						width: 100%;
-						width: 100%;
-						display: flex;
-						align-items: center;
-						justify-content: space-evenly;
-						padding-top: 1rem;
-						padding-bottom: 1rem;
-						> div {
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							flex-direction: column;
-							row-gap: 0.2rem;
-							> h3 {
-								color: #029e9d;
-								font-size: 1.9rem;
-							}
-						}
-					}
-					> .tripcalculated {
-						width: 100%;
-						display: flex;
-						align-items: center;
-						justify-content: space-evenly;
-						padding-bottom: 1rem;
-						> div {
-							display: flex;
-							align-items: center;
-							gap: 0.5rem;
-							> svg {
-								color: #029e9d;
-								font-size: 1.4rem;
-							}
-							> p {
-								font-size: 1rem;
-							}
-						}
-						> button {
-							padding: 1rem 2rem;
-							border-radius: 5px;
-							background-color: #029e9d;
-							color: #fcfcfc;
-							font-size: 1.1rem;
-							font-weight: 600;
-						}
-					}
+				> .data {
+					width: 60%;
 				}
 			}
 		}

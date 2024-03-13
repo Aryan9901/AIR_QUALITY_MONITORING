@@ -73,7 +73,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import "./mixins";
+@import "./utils/variables";
+@import "./utils/mixins";
 @import "./dashboard";
 @import "./signup";
 @import "./mediaQueries";
@@ -309,107 +310,12 @@ a {
 				margin-top: -0.1rem;
 			}
 		}
-	}
-}
-
-// table css
-
-.tableHeading {
-	display: flex;
-	width: 100%;
-	background-color: #029e9d;
-	padding: 1rem 2rem;
-	align-items: center;
-	justify-content: space-between;
-	border-radius: 5px;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	> h3 {
-		font-size: 1rem;
-		color: #fcfcfc;
-	}
-}
-.Table {
-	width: 100%;
-	> .headers {
-		background-color: #d4e5d2;
-		padding: 2rem 0;
-		width: 100%;
-		display: grid;
-		gap: 1rem;
-		> h3 {
-			font-size: 1rem;
-			text-align: center;
-		}
-	}
-	> .tableContentBody {
-		max-height: 50vh;
-		overflow-x: hidden;
-		overflow-y: scroll;
-		&::-webkit-scrollbar {
-			display: block;
-			width: 0;
-		}
-	}
-	> .tableContentBody .tableContents {
-		border-top: 1px solid #666;
-		padding: 1.2rem 0;
-		width: 100%;
-		cursor: pointer;
-		transition: all 0.3s;
-		display: grid;
-		gap: 1rem;
-		place-items: center;
-		> h3 {
-			font-family: "Gilroy", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-				"Helvetica Neue", sans-serif;
-			font-size: 1rem;
-			text-align: center;
-		}
 		> button {
-			padding: 0.75rem 1.5rem;
-			width: fit-content;
-			display: block;
-			margin: 0 auto;
-			border-radius: 5px;
-
-			font-size: 1rem;
-			font-weight: 600;
-		}
-		&:hover,
-		&:focus {
+			padding: 0.7rem 2rem;
 			background-color: #029e9d;
-			color: #fcfcfc;
-		}
-	}
-}
-
-// ** upload csv file
-
-.addFile {
-	margin: 1rem 2rem;
-	margin-bottom: 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 2rem;
-	> input {
-		&::-webkit-file-upload-button {
-			@include inputStyles(fit-content, 1rem 1.5rem);
-			width: 100%;
+			font-size: 1.2rem;
 			border-radius: 5px;
-			font: 100 1rem "Roboto", sans-serif;
-			border: none;
-			cursor: pointer;
-			color: white;
-			background-color: #d70372;
-		}
-	}
-	> svg {
-		transition: all 0.4s;
-		color: #d70372;
-		&:hover {
-			scale: 1.2;
+			color: #fcfcfc;
 		}
 	}
 }

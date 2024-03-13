@@ -4,6 +4,7 @@ import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import { IoIosSettings } from "react-icons/io";
 import Bar from "../components/Bar";
 import { useState } from "react";
+import { FaCloud, FaLocationArrow, FaSun } from "react-icons/fa";
 
 const Dashboard = () => {
 	return (
@@ -11,12 +12,33 @@ const Dashboard = () => {
 			<AdminSidebar />
 			<main className="dashboard">
 				<Bar />
-				<h2>Dashboard</h2>
-
-				<section className="widget-container">
+				{/* <section className="widget-container">
 					<WidgetItem percent={2.8} value={340000} heading="Income" color="rgba(0,115,255)" />
 					<WidgetItem percent={-2.5} value={400} heading="Paid" color="rgba(0,198,202)" />
 					<WidgetItem percent={4} value={23000} heading="Invoices" color="rgba(0,115,255)" />
+				</section> */}
+				<section className="mapContainer">
+					<div className="HomeCard">
+						<div className="header">
+							<h3>
+								<FaLocationArrow />
+								Home
+							</h3>
+							<button>Moderate</button>
+						</div>
+						<div className="maindata">
+							<div className="graph">
+								<div className="piechart"></div>
+								<div className="g1">
+									<FaSun /> 22 C
+								</div>
+								<div className="g2">
+									<FaCloud /> 66 C
+								</div>
+							</div>
+							<div className="data"></div>
+						</div>
+					</div>
 				</section>
 			</main>
 		</div>
