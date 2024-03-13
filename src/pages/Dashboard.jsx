@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import AdminSidebar from "../components/AdminSidebar";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
-import { IoIosSettings } from "react-icons/io";
+import { IoIosPartlySunny, IoIosSettings } from "react-icons/io";
 import Bar from "../components/Bar";
 import { useState } from "react";
 import { FaCloud, FaLocationArrow, FaSun } from "react-icons/fa";
+import ProgressBar from "@ramonak/react-progress-bar";
+import { MdWaterDrop } from "react-icons/md";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const Dashboard = () => {
 	return (
@@ -28,19 +32,59 @@ const Dashboard = () => {
 						</div>
 						<div className="maindata">
 							<div className="graph">
-								<div className="piechart"></div>
+								<CircularProgressbar value={80} text={`${80}%`} />
 								<div className="g1">
-									<FaSun /> 22 C
+									<IoIosPartlySunny /> 22 C
 								</div>
 								<div className="g2">
-									<FaCloud /> 66 C
+									<MdWaterDrop /> 66 C
 								</div>
 							</div>
-							<div className="data"></div>
+							<div className="data">
+								<AqiLevel value={25} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
+								<AqiLevel value={55} unit="ug/m^2" parameter="PM 2.5" color={"red"} />
+								<AqiLevel value={86} unit="ug/m^2" parameter="PM 2.5" color={"green"} />
+								<AqiLevel value={43} unit="ug/m^2" parameter="PM 2.5" color={"salmon"} />
+								<AqiLevel value={69} unit="ug/m^2" parameter="PM 2.5" color={"cyan"} />
+							</div>
 						</div>
 					</div>
+					<section className="cityCard">
+						<div className="header">
+							<h3>
+								<FaLocationArrow />
+								Home
+							</h3>
+							<button>Moderate</button>
+						</div>
+						<p>AQI trend in last 24 hrs</p>
+						<div className="maindata">
+							<div className="graph">
+								<CircularProgressbar value={80} text={`${80}%`} />
+							</div>
+							<div className="data">
+								<AqiLevel value={25} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
+								<AqiLevel value={55} unit="ug/m^2" parameter="PM 2.5" color={"red"} />
+								<AqiLevel value={86} unit="ug/m^2" parameter="PM 2.5" color={"green"} />
+								<AqiLevel value={43} unit="ug/m^2" parameter="PM 2.5" color={"salmon"} />
+								<AqiLevel value={69} unit="ug/m^2" parameter="PM 2.5" color={"cyan"} />
+							</div>
+						</div>
+					</section>
 				</section>
 			</main>
+		</div>
+	);
+};
+
+export const AqiLevel = ({ value, unit, parameter, color }) => {
+	return (
+		<div className="aqiLevel">
+			<ProgressBar bgColor={color} completed={value} className="wrapper" maxCompleted={100} customLabel=" " />
+			<h3>
+				{value} {unit}
+			</h3>
+			<p>{parameter}</p>
 		</div>
 	);
 };
